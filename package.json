@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Sem paciencia",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "mongodb",
+    "express"
+  ],
+  "author": "Gabriel Campos",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.0.0"
+  }
+}

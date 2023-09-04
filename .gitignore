@@ -1,0 +1,5 @@
+//Não manda as seguintes pastas para o git hub
+
+node_modules/
+*.env
+*.lock

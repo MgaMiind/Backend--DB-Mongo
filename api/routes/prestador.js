@@ -1,5 +1,5 @@
 /* API REST DOS PRESTADORES*/
-import express from 'express'
+import express, { response } from 'express'
 import { connectToDatabase } from '../utils/mongodb.js'
 
 const router = express.Router()
@@ -29,4 +29,22 @@ router.get('/', async(req, res) => {
     }
 })
 
+/*
+   GET /api/prestadores/id/:id
+   Lista todos os prestadores 
+*/
+router.get('/id/:id', async(req, res) => {
+    try {
+        db.collection(nomeCollection).find({'_id': {$eq: ObjectId(req.params.id)}})
+        .toArray((err, docs) => {
+            if(err){
+                res.status(400).json(err) //bad request
+            } else {
+                res.status(200).json(docs) //retorna o documento
+            }
+        })
+    } catch (err) {
+        res.status(500).json({"error": err.message})
+    }
+})
 export default router

@@ -12,7 +12,7 @@ app.use('/', express.static('public'))
 app.use('/favicon.ico', express.static('public/images/computador.png'))
 
 //Rotas da API
-app.use('api/prestadres', rotasPrestadores)
+app.use('/api/prestadores', rotasPrestadores)
 
 app.get('/api', (req, res) => {
     res.status(200).json({
